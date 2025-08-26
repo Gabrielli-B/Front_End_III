@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        function compararVetor(v1,v2){
+            if(v1.length !== v2.length){
+                return false;
+            }
+            for(let i = 0; i<v1.length; i++){
+                if(v1[i] !== v2[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        var vetor1 = [1,2,3,4];
+        var vetor2 = [1,2,3,4];
+        var vetor3 = [8,5,6,1];
+
+       console.log(compararVetor(vetor1,vetor2)); 
+       console.log(compararVetor(vetor3,vetor2));
+    </script>
+</body>
+</html>
