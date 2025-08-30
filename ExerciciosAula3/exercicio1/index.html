@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function Personagem(nome, energia=100,forca=10) {
+            this.nome = nome;
+            this.energia = energia;
+            this.forca = forca;
+        }
+
+        Personagem.prototype.dano = function (valor) {
+            if (valor > 0) {
+                this.energia -= valor;
+                if (this.energia < 0) {
+                    this.energia = 0;
+                }
+            }
+        }
+
+        Personagem.prototype.status = function () {
+            if (this.energia == 0) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+
+        Personagem.prototype.ataque= function(){
+            return Math.floor(Math.random() * (this.forca + 1));
+        }
+
+        const p1 = new Personagem("Harry");
+        const p2 = new Personagem("Hermione",80,20);
+
+        console.log(p1.nome,p1.forca,p1.energia);
+        console.log(p2.nome,p2.forca,p2.energia);
+
+        console.log("TESTE HARRY");
+        console.log("Ataque | "+p1.ataque())
+        p1.dano(20);
+        console.log("Energia  p1 | "+p1.energia);
+    
+        console.log("TESTE HERMIONE");
+        console.log("Ataque | "+p2.ataque())
+        p2.dano(30);
+        console.log("Energia atual  | "+p2.energia);
+    
+
+    </script>
+</body>
+
+</html>
