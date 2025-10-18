@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Calculadora(){
+        
+            this.somar = function(a,b){
+                return a+b;
+            }
+
+            this.subtrair = function(a,b){
+                return a-b;
+            }
+
+            this.multiplicar = function(a,b){
+                return a*b;
+            }
+
+            this.dividir = function(a,b){
+                if(b!=0){
+                    return a/b;
+                }else{
+                    return "Impossível fazer divisão por zero";
+                }
+            }
+        }
+
+        const cal = new Calculadora();
+
+        console.log(cal.somar(2,2));
+        console.log(cal.subtrair(2,2));
+        console.log(cal.multiplicar(3,3));
+        console.log(cal.dividir(10,2));
+        console.log(cal.dividir(3,0));
+        console.log(cal.dividir(0,2));
+    </script>
+</body>
+</html>

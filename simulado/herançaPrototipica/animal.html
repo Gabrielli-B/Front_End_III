@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Animal(nome){
+            this.nome = nome;
+        }
+
+        Animal.prototype.falar = function(){
+            return this.nome + " faz algum som.";
+        }
+
+        function Cachorro(nome,raca){
+            Animal.call(this, nome)
+            this.raca = raca
+        }
+
+        Cachorro.prototype = Object.create(Animal.prototype)
+        Cachorro.prototype.constructor = Cachorro
+
+        Cachorro.prototype.falar = function(){
+            return this.nome + " Raça: "+ this.raca+ " late!";
+        }
+
+        
+        const cachorro1 = new Cachorro("Rex", "Labrador");
+
+        console.log(cachorro1.falar());
+
+        console.log(cachorro1 instanceof Animal) // true
+    </script>
+</body>
+</html>

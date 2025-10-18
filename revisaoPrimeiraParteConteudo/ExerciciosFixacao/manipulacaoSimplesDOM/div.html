@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrado {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Adicionar quadrado</button>
+
+    <div id="area"></div>
+
+    <script>
+        const botao = document.getElementById('btn');
+        const area = document.getElementById('area');
+
+        botao.addEventListener('click',function(){
+            const novoQuadrado = document.createElement('div');
+            novoQuadrado.classList.add('quadrado');
+
+            novoQuadrado.style.backgroundColor = "blue";
+
+            area.appendChild(novoQuadrado);
+        });
+    </script>
+</body>
+</html>

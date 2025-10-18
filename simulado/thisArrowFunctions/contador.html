@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const contador = {
+            valor: 0,
+            // versão com função normal (this problemático)
+            iniciarComFuncaoNormal() {
+                setInterval(function() {
+                this.valor++
+                console.log(this.valor)
+                }, 1000)
+            },
+            // versão corrigida com arrow function
+            iniciarComArrow() {
+                setInterval(() => {
+                this.valor++
+                console.log(this.valor)
+                }, 1000)
+            }
+        }
+
+       // contador.iniciarComFuncaoNormal();
+        contador.iniciarComArrow();
+    </script>
+</body>
+</html>

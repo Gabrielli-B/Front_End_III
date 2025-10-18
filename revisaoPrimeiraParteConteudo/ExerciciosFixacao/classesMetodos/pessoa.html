@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Pessoa{
+            constructor(nome,idade,profissao){
+                this.nome = nome;
+                this.idade = idade;
+                this.profissao = profissao;
+            }
+
+            apresentar(){
+                console.log("Olá, meu nome é "+this.nome + ", tenho "+this.idade+" anos e sou "+this.profissao);
+            }
+        }
+
+        const p1 = new Pessoa("Creuza",45,"Enfermeira");
+        const p2 = new Pessoa("Carlos Miguel",30,"Dentista");
+        const p3 = new Pessoa("Cassiano",25,"Professor");
+
+        p1.apresentar();
+        p2.apresentar();
+        p3.apresentar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Aluno{
+            constructor(nome,curso){
+                this.nome = nome;
+                this.curso = curso;
+            }
+
+            info(){
+                console.log(`nome: ${this.nome} curso: ${this.curso}`);
+            }
+        }
+
+        class AlunoGraduacao extends Aluno{
+            constructor(nome,curso,anoConclusao){
+                super(nome,curso);
+                this.anoConclusao=anoConclusao;
+            }
+
+            status(){
+                return `O aluno ${this.nome} concluirá o curso em ${this.anoConclusao}`;
+            }
+        }
+
+        const aluno1 = new AlunoGraduacao("Jonatas","ECA",2028);
+        const aluno2 = new AlunoGraduacao("Elisa","TSI",2026);
+
+        aluno1.info();
+        console.log(aluno1.status());
+
+        aluno2.info();
+        console.log(aluno2.status());
+                
+    </script>
+</body>
+</html>

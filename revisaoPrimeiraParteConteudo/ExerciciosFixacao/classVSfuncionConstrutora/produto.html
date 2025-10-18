@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function ProdutoFunctionConstrutora(nome,preco,estoque){
+            this.nome = nome;
+            this.preco = preco;
+            this.estoque = estoque;
+
+            this.exibirInfo = function(){
+                console.log(`Nome: ${this.nome} Preço: ${this.preco} Estoque: ${this.estoque}`);
+            }
+        }
+
+        class ProdutoComClass{
+            constructor(nome,preco,estoque){
+                this.nome = nome;
+                this.preco = preco;
+                this.estoque = estoque;
+            }
+
+            exibirInfo(){
+                console.log(`Nome: ${this.nome} Preço: ${this.preco} Estoque: ${this.estoque}`);
+            }
+        }
+
+        const p1 =  new ProdutoFunctionConstrutora("Tesoura",5.50,10);
+        const p2 = new ProdutoFunctionConstrutora("Apontador",1.50,5);
+
+        const p3 = new ProdutoComClass("Lápis",0.50,20);
+        const p4 = new ProdutoComClass("Caneta",1.80,30);
+        
+        p1.exibirInfo();
+        p2.exibirInfo();
+        p3.exibirInfo();
+        p4.exibirInfo();
+
+    </script>
+</body>
+</html>

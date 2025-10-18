@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Carro(marca,modelo,ano){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.ano = ano;
+
+            this.info = function(){
+                console.log("Marca: "+this.marca + " Modelo: " + this.modelo + " Ano: "+this.ano);
+            }
+        }
+
+        const c1 = new Carro("Chevrolet","Onix",2020);
+        const c2 = new Carro("Honda","Honda City",2018);
+
+        c1.info();
+        c2.info();
+
+        Carro.prototype.idadeCarro = function(){
+            let anoAtual = new Date().getFullYear();
+            return anoAtual - this.ano;
+        }
+
+        console.log("Idade do carro 1 : "+c1.idadeCarro());
+        console.log("Idade do carro 2 : "+c2.idadeCarro());
+    </script>
+</body>
+</html>

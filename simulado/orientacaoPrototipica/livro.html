@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Livro(titulo,autor,ano){
+            this.titulo = titulo;
+            this.autor = autor;
+            this.ano = ano;
+        }
+
+        Livro.prototype.descricao = function(){
+            console.log("O livro "+this.titulo + " foi escrito por "+this.autor + " em "+this.ano);
+        }
+
+        const l1 = new Livro("O sorriso deixou seus olhos","Stella Souza",2020);
+        const l2 = new Livro("Boca mentirosa","leonardo Oliveira",2016);
+
+        l1.descricao();
+        l2.descricao();
+
+        function Revista(){
+            this.titulo = arguments[0];
+            this.editora = arguments[1];
+            this.edicao = arguments[2];
+        }
+
+        Revista.prototype.exibirDados = function(){
+            console.log("A revista "+this.titulo + " foi escrita na editora "+this.editora + " na edição "+this.edicao);
+        }
+
+        const r1 = new Revista("Hoje em dia","Hoje",204);
+
+        r1.exibirDados();
+    </script>
+</body>
+</html>
